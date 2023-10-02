@@ -2,11 +2,9 @@
 <div class="books-container">
   {{#each books}}
     <div>#{{this.id}} - 
-      <span class="bold"><a href="/books/{{this.id}}">{{this.name}}</a></span>Data de realização :{{book.date}},
-      Nº do certificado :{{{book.certificate}}},
-      Tipo de curso{{book.course}},Validade : {{book.expiration}},E-mail {{book.email}},Contato:  {{book.fone}}
-      
-      
-      </div>
+      <span class="bold"><a href="/books/{{this.id}}">{{this.name}}</a>
+      {{this.student}}
+      </span>    
+    </div>
   {{/each}}
 </div>
