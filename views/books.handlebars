@@ -1,6 +1,12 @@
-<h1>Livros disponíveis:</h1>
+<h1>Clientes:</h1>
 <div class="books-container">
   {{#each books}}
-    <div>#{{this.id}} - <span class="bold"><a href="/books/{{this.id}}">{{this.title}}</a></span> - {{this.pageqty}} páginas</div>
+    <div>#{{this.id}} - 
+      <span class="bold"><a href="/books/{{this.id}}">{{this.name}}</a></span>Data de realização :{{book.date}},
+      Nº do certificado :{{book.certificate}},
+      Tipo de curso{{book.course}},Validade : {{book.expiration}},E-mail {{book.email}},Contato:  {{book.fone}}
+      
+      
+      </div>
   {{/each}}
 </div>

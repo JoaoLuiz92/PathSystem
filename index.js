@@ -25,10 +25,15 @@ app.get('/', function (req, res) {
 })
 
 app.post('/books/insertbook', function (req, res) {
-  const title = req.body.title
-  const pageqty = req.body.pageqty
+  const name = req.body.name
+  const date = req.body.date
+  const certificate = req.body.certificate
+  const course = req.body.course
+  const expiration = req.body.expiration
+  const email = req.body.email
+  const fone = req.body.fone
 
-  const query = `INSERT INTO books (title, pageqty) VALUES ('${title}', ${pageqty})`
+  const query = `INSERT INTO book (name,date,certificate,course,expiration,email,fone) VALUES ('${name}', ${date},'${certificate}','${course}','${expiration}','${email}','${fone}')`
 
   pool.query(query, function (err) {
     if (err) {
@@ -42,7 +47,7 @@ app.post('/books/insertbook', function (req, res) {
 app.get('/books', function (req, res) {
   const query = `SELECT * FROM books`
 
-  console.log('TEste')
+  console.log('Teste')
 
   pool.query(query, function (err, data) {
     if (err) {
@@ -95,10 +100,15 @@ app.get('/books/edit/:id', function (req, res) {
 
 app.post('/books/updatebook', function (req, res) {
   const id = req.body.id
-  const title = req.body.title
-  const pageqty = req.body.pageqty
+  const name = req.body.name
+  const date = req.body.date
+  const certificate = req.body.certificate
+  const course = req.body.course
+  const expiration = req.body.expiration
+  const email = req.body.email
+  const fone = req.body.fone
 
-  const query = `UPDATE books SET title = '${title}', pageqty = ${pageqty} WHERE id = ${id}`
+  const query = `UPDATE books SET name = '${name}', date = '${date}',certificate = '${certificate}', course = '${course}', expiration = '${expiration}', email = '${email}', fone = '${fone}' WHERE id = ${id}`
 
   pool.query(query, function (err) {
     if (err) {

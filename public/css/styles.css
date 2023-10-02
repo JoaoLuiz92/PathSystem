@@ -8,7 +8,12 @@
   border-bottom: 1px solid #ccc;
   padding: 1em;
   margin-bottom: 1em;
+  background: linear-gradient(red, blue);
+
+  
+  
 }
+
 
 #navbar ul {
   display: flex;
@@ -17,6 +22,25 @@
 
 #navbar ul li {
   margin-left: 1em;
+
+}
+.btn{
+  background: #63beff;
+  color: #fff;
+  padding: line-height / 2 line-height;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+
+.head {
+  color: white;
+  text-align: center; 
+  width: 1000px;
+  margin:auto;
+  font-size: 2em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h1 {

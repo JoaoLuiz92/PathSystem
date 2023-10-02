@@ -1,8 +1,13 @@
 <div id="book-page">
   <a href="/books">Voltar</a>
   <div class="container">
-    <h1>{{book.title}}</h1>
-    <p>Este livro tem {{book.pageqty}} páginas.</p>
+    <h1>{{book.name}}</h1>
+    <p>Data de realização :{{book.date}}</p>
+    <p>Nº do certificado :{{book.certificate}}</p>
+    <p>Tipo de curso{{book.course}}</p>
+    <p>Validade : {{book.expiration}}</p>
+    <p>E-mail {{book.email}}</p>
+    <p>Contato:  {{book.fone}}</p>
     <div class="actions">
       <a href="/books/edit/{{book.id}}">Editar</a>
       <form action="/books/remove/{{book.id}}" method="POST">

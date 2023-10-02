@@ -1,12 +1,35 @@
-<h1>Cadastre o seu livro:</h1>
+<h1>Cadastro de clientes :</h1>
 <form class="form" action="/books/insertbook" method="POST">
   <div class="form-control">
-    <label for="title">Título:</label>
-    <input type="text" name="title" placeholder="Título do livro">
+    <label for="name">Cliente</label>
+    <input type="text" name="name" placeholder="Nome do cliente">
   </div>
   <div class="form-control">
-    <label for="pageqty">Número de páginas:</label>
-    <input type="number" name="pageqty" placeholder="Quantas páginas o livro tem?">
+    <label for="date">Data de conclusão</label>
+    <input type="text" name="date" placeholder="Data curso realizado">
   </div>
+  <div class="form-control">
+    <label for="certificate">Número do certificado</label>
+    <input type="text" name="certificate" placeholder="Número do certificado">
+  </div>
+  <div class="form-control">
+    <label for="course">Tipo do curso</label>
+    <input type="text" name="course" placeholder="Tipo de curso realizado">
+  </div>
+  <div class="form-control">
+    <label for="expiration">Data de vencimento</label>
+    <input type="text" name="expiration" placeholder="Data de vencimento">
+  </div>
+  <div class="form-control">
+    <label for="email">E-mail</label>
+    <input type="email" name="email" placeholder="E-mail">
+  </div>
+  <div class="form-control">
+    <label for="fone">Contato</label>
+    <input type="text" name="fone" placeholder="Telefone para contato">
+  </div>
+  
+
+
   <input type="submit" value="Cadastrar">
 </form>
