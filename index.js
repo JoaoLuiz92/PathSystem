@@ -33,7 +33,7 @@ app.post('/books/insertbook', function (req, res) {
   const email = req.body.email
   const fone = req.body.fone
 
-  const query = `INSERT INTO book (name,date,certificate,course,expiration,email,fone) VALUES ('${name}', ${date},'${certificate}','${course}','${expiration}','${email}','${fone}')`
+  const query = `INSERT INTO books (name,date,certificate,course,expiration,email,fone) VALUES ('${name}', ${date},'${certificate}','${course}','${expiration}','${email}','${fone}')`
 
   pool.query(query, function (err) {
     if (err) {
