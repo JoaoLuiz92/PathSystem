@@ -1,16 +1,16 @@
 <h1>Cadastro de clientes :</h1>
 <form class="form" action="/books/insertbook" method="POST">
   <div class="form-control">
+      <div class="form-control">
+    <label for="conclusion">Data de conclusão</label>
+    <input type="date" name="conclusion" placeholder="Data curso realizado">
+  </div>
     <label for="name">Cliente</label>
     <input type="text" name="name" placeholder="Nome do cliente">
   </div>
    <div class="form-control">
     <label for="student">Aluno</label>
-    <input type="text" name="student" placeholder="Nome do Aluno  ">
-  </div>
-  <div class="form-control">
-    <label for="date">Data de conclusão</label>
-    <input type="text" name="date" placeholder="Data curso realizado">
+    <input type="text" name="student" placeholder="Nome do Aluno">
   </div>
   <div class="form-control">
     <label for="certificate">Número do certificado</label>
@@ -22,7 +22,7 @@
   </div>
   <div class="form-control">
     <label for="expiration">Data de vencimento</label>
-    <input type="text" name="expiration" placeholder="Data de vencimento">
+    <input type="date" name="expiration" placeholder="Data de vencimento">
   </div>
   <div class="form-control">
     <label for="email">E-mail</label>

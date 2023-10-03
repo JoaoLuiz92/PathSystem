@@ -25,16 +25,17 @@ app.get('/', function (req, res) {
 })
 
 app.post('/books/insertbook', function (req, res) {
+  const conclusion = req.body.conclusion
   const name = req.body.name
   const student = req.body.student
-  const date = req.body.date
   const certificate = req.body.certificate
   const course = req.body.course
   const expiration = req.body.expiration
   const email = req.body.email
   const fone = req.body.fone
 
-  const query = `INSERT INTO books (name,student,date,certificate,course,expiration,email,fone) VALUES ('${name}','${student}', ${date},'${certificate}','${course}','${expiration}','${email}','${fone}')`
+  const query = `INSERT INTO books (conclusion,name,student,certificate,course,expiration,email,fone) 
+  VALUES ('${conclusion}','${name}','${student}', '${certificate}','${course}','${expiration}','${email}','${fone}')`
 
   pool.query(query, function (err) {
     if (err) {
@@ -101,16 +102,16 @@ app.get('/books/edit/:id', function (req, res) {
 
 app.post('/books/updatebook', function (req, res) {
   const id = req.body.id
+  const conclusion = req.body.conclusion
   const name = req.body.name
   const student = req.body.student
-  const date = req.body.date
   const certificate = req.body.certificate
   const course = req.body.course
   const expiration = req.body.expiration
   const email = req.body.email
   const fone = req.body.fone
 
-  const query = `UPDATE books SET name = '${name}',aluno = '${student}, date = '${date}',certificate = '${certificate}', course = '${course}', expiration = '${expiration}', email = '${email}', fone = '${fone}' WHERE id = ${id}`
+  const query = `UPDATE books SET  conclusion = '${conclusion}', name = '${name}',student = '${student},certificate = '${certificate}', course = '${course}', expiration = '${expiration}', email = '${email}', fone = '${fone}' WHERE id = ${id}`
 
   pool.query(query, function (err) {
     if (err) {

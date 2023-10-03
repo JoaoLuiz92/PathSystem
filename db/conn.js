@@ -6,6 +6,7 @@ const pool = mysql.createPool({
   user: 'root',
   password: '',
   database: 'nodemysql',
+  dateStrings:'date',
+  
 })
-
 module.exports = pool
