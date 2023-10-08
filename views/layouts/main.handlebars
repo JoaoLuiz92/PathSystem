@@ -8,13 +8,24 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
-    <nav id="navbar">
-      <ul>
-        <button class="btn"><a href="/">Cadastrar</a></button>
-        <button class="btn"><a href="/books">Clientes</a></button>
-        <li class="head">Path System</li>
-      </ul>
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a   class="navbar-brand navbar-logo">PATH SYSTEM</a>
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><i class="fas fa-tachometer-alt"></i>Cadastrar</a>
+                </li>
+                <span>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/books"><i class="far fa-address-book"></i>Clientes</a>
+                </li>
+                </span>
+            </ul>
+        </div>
     </nav>
-    {{{ body }}}
+ {{{ body }}}
   </body>
 </html>

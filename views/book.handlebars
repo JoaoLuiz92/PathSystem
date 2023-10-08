@@ -1,19 +1,27 @@
 <div id="book-page">
-  <a href="/books">Voltar</a>
   <div class="container">
     <h1>{{book.id}}</h1>
-    <p>Nome do cliente: {{book.name}}</p>
-    <p>Nome do Aluno: {{book.student}}</p>
-    <p>Data de realização: {{book.conclusion}}</p>
-    <p>Nº do certificado: {{book.certificate}}</p>
-    <p>Tipo de curso: {{book.course}}</p>
-    <p>Validade: {{book.expiration}}</p>
-    <p>E-mail: {{book.email}}</p>
-    <p>Contato: {{book.fone}}</p>
+    <p><span class="model">Cliente/Empresa:</span> {{book.name}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Aluno(a):</span> {{book.student}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Data de realização: </span>{{book.conclusion}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Nº do certificado: </span>{{book.certificate}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Tipo de curso: </span>{{book.course}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Validade:</span> {{book.expiration}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">E-mail:</span> {{book.email}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Contato:</span> {{book.fone}}</p>
     <div class="actions">
-      <a href="/books/edit/{{book.id}}">Editar</a>
+      <a class="btn" href="/books/edit/{{book.id}}">Editar</a>
       <form action="/books/remove/{{book.id}}" method="POST">
-        <input type="submit" value="Remover">
+        <input class="btn" type="submit" value="Remover">
+        <a href="/books" class="btn2">Voltar</a>
+
       </form>
     </div>
   </div>

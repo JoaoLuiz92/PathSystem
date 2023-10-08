@@ -1,9 +1,11 @@
 <h1>Clientes:</h1>
 <div class="books-container">
   {{#each books}}
-    <div>#{{this.id}} - 
+    <div>
+      <ul class="separator"></ul>
+      <span class="identif">{{this.id}}</span> - 
       <span class="bold"><a href="/books/{{this.id}}">{{this.name}}</a>
-      {{this.student}}
+      :  {{this.student}}
       </span>    
     </div>
   {{/each}}
