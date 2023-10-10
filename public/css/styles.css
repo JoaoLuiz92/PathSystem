@@ -233,3 +233,17 @@ margin-top: 0em;
 margin-right: 0em;
 margin-bottom: 0em;
 }
+
+#inputbar {
+  background-color:#2F4F4F;
+  border:solid 1px;
+  border-radius:15px;
+  width:300px;
+}
+
+#btnsearch {
+  background-color:#9aa8a8;
+
+
+
+}
