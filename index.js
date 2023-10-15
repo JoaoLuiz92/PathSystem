@@ -1,5 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const mysql = require ('mysql')
 
 const pool = require('./db/conn')
 
@@ -136,18 +137,49 @@ app.post('/books/remove/:id', function (req, res) {
   })
 })
 
-function search() {
-  let input = document.getElementById('searchbar').value
-  input = input.toLowerCase()
-  let x = document.getElementsByClassName('name')
+app.get(`/books`, function (req, res) {
+  
+  const student = req.params.student
+  const name = req.params.name
 
-  for (i = 0; i<x.length;i++) {
-    if(!x[i].innerHTML.toLowerCase().includes(input)){
-      x[i].style.display = "none"
-    }else {
-      x[i].style.display = 'list-item'
+  
+  pool.query(query, function (err) {
+    if (err) {
+      const query = "SELECT * FROM books WHERE name LIKE '%"+name+"%' AND student LIKE'%"+student+"%'"
+      console.log(query)
     }
-  }
-}
+
+    res.render('searchbook', { books })
+  })
+})
+
+
+
+/*app.get('/searchbooks/:id', (req, res) => {
+
+  const id = req.params.id
+ 
+  const query = `SELECT * FROM books WHERE name = ${id}`;
+  pool.query(query, ['%' + id + '%'], (err) => {
+    if (err) {
+      console.log (err)
+    }
+    console.log(query)
+    res.render(`shearchbook`, {book});
+    
+
+  });
+});
+
+/*app.post('/search', (req, res) => {
+
+  pool.query(sql, ['%' + query + '%'], (err, results) => {
+    if (err) {
+      console.log (err)
+    }
+    // Render search results here
+    res.render(`/search/${id}`);
+  });
+});*/
 
 app.listen(3000)

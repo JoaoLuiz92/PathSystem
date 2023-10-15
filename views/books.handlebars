@@ -1,9 +1,10 @@
 <h1>Clientes:</h1>
 <div class="books-container">
-<input id ="inputbar" type="text"  name="searchbar" placeholder="  Pesquisar cliente" onkeyup="search()">
-<button id="btnsearch" type="text" name="btn3">Pesquisar</button>
+<form href="/searchbook" method="GET">
+  <input type="text" name="" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>
   {{#each books}}
-
     <div>
       <ul class="separator"></ul>
       <span class="identif">{{this.id}}</span> - 
