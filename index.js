@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
   res.render('home')
 })
 
-app.post('/books/insertbook', function (req, res) {
+app.post('/clients/insertuser', function (req, res) {
   const conclusion = req.body.conclusion
   const name = req.body.name
   const student = req.body.student
@@ -35,7 +35,7 @@ app.post('/books/insertbook', function (req, res) {
   const email = req.body.email
   const fone = req.body.fone
 
-  const query = `INSERT INTO books (conclusion,name,student,certificate,course,expiration,email,fone) 
+  const query = `INSERT INTO clients (conclusion,name,student,certificate,course,expiration,email,fone) 
   VALUES ('${conclusion}','${name}','${student}', '${certificate}','${course}','${expiration}','${email}','${fone}')`
 
   pool.query(query, function (err) {
@@ -47,8 +47,8 @@ app.post('/books/insertbook', function (req, res) {
   })
 })
 
-app.get('/books', function (req, res) {
-  const query = `SELECT * FROM books`
+app.get('/clients', function (req, res) {
+  const query = `SELECT * FROM clients`
 
   console.log('Teste')
 
@@ -57,51 +57,51 @@ app.get('/books', function (req, res) {
       console.log(err)
     }
 
-    const books = data
+    const clients = data
 
     console.log(data)
 
-    res.render('books', { books })
+    res.render('clients', { clients })
   })
 })
 
-app.get('/books/:id', function (req, res) {
+app.get('/clients/:id', function (req, res) {
   const id = req.params.id
 
-  const query = `SELECT * FROM books WHERE id = ${id}`
+  const query = `SELECT * FROM clients WHERE id = ${id}`
 
   pool.query(query, function (err, data) {
     if (err) {
       console.log(err)
     }
 
-    const book = data[0]
+    const user = data[0]
 
     console.log(data[0])
 
-    res.render('book', { book })
+    res.render('user', { user })
   })
 })
 
-app.get('/books/edit/:id', function (req, res) {
+app.get('/clients/edit/:id', function (req, res) {
   const id = req.params.id
 
-  const query = `SELECT * FROM books WHERE id = ${id}`
+  const query = `SELECT * FROM clients WHERE id = ${id}`
 
   pool.query(query, function (err, data) {
     if (err) {
       console.log(err)
     }
 
-    const book = data[0]
+    const user = data[0]
 
     console.log(data[0])
 
-    res.render('editbook', { book })
+    res.render('edituser', { user })
   })
 })
 
-app.post('/books/updatebook', function (req, res) {
+app.post('/clients/updateuser', function (req, res) {
   const id = req.body.id
   const conclusion = req.body.conclusion
   const name = req.body.name
@@ -112,32 +112,32 @@ app.post('/books/updatebook', function (req, res) {
   const email = req.body.email
   const fone = req.body.fone
 
-  const query = `UPDATE books SET  conclusion = '${conclusion}', name = '${name}',student = '${student},certificate = '${certificate}', course = '${course}', expiration = '${expiration}', email = '${email}', fone = '${fone}' WHERE id = ${id}`
+  const query = `UPDATE clients SET  conclusion = '${conclusion}', name = '${name}',student = '${student},certificate = '${certificate}', course = '${course}', expiration = '${expiration}', email = '${email}', fone = '${fone}' WHERE id = ${id}`
 
   pool.query(query, function (err) {
     if (err) {
       console.log(err)
     }
 
-    res.redirect(`/books/edit/${id}`)
+    res.redirect(`/clients/edit/${id}`)
   })
 })
 
-app.post('/books/remove/:id', function (req, res) {
+app.post('/clients/remove/:id', function (req, res) {
   const id = req.params.id
 
-  const query = `DELETE FROM books WHERE id = ${id}`
+  const query = `DELETE FROM clients WHERE id = ${id}`
 
   pool.query(query, function (err) {
     if (err) {
       console.log(err)
     }
 
-    res.redirect(`/books`)
+    res.redirect(`/clients`)
   })
 })
 
-app.get(`/books`, function (req, res) {
+app.get(`/clients`, function (req, res) {
   
   const student = req.params.student
   const name = req.params.name
@@ -145,27 +145,27 @@ app.get(`/books`, function (req, res) {
   
   pool.query(query, function (err) {
     if (err) {
-      const query = "SELECT * FROM books WHERE name LIKE '%"+name+"%' AND student LIKE'%"+student+"%'"
+      const query = "SELECT * FROM clients WHERE name LIKE '%"+name+"%' AND student LIKE'%"+student+"%'"
       console.log(query)
     }
 
-    res.render('searchbook', { books })
+    res.render('searchuser', { clients })
   })
 })
 
 
 
-/*app.get('/searchbooks/:id', (req, res) => {
+/*app.get('/searchclients/:id', (req, res) => {
 
   const id = req.params.id
  
-  const query = `SELECT * FROM books WHERE name = ${id}`;
+  const query = `SELECT * FROM clients WHERE name = ${id}`;
   pool.query(query, ['%' + id + '%'], (err) => {
     if (err) {
       console.log (err)
     }
     console.log(query)
-    res.render(`shearchbook`, {book});
+    res.render(`shearchuser`, {user});
     
 
   });

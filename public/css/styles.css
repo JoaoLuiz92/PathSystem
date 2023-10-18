@@ -51,18 +51,18 @@ h1 {
   
 }
 
-.books-container {
+.clients-container {
   width: 450px;
   margin: 0 auto;
 }
 
-.books-container div {
+.clients-container div {
 
   padding: 5px;
   margin: 5px;
 }
 
-#book-page .container {
+#user-page .container {
   text-align: center;
 }
 

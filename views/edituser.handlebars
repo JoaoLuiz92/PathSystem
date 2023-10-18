@@ -1,0 +1,40 @@
+<div id="user-page">
+  <div class="container">
+    <h1>Editar Cadastro: {{user.student}}</h1> 
+      <form class="form" action="/clients/updateuser" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}">
+      <div class="form-control">
+          <label for="name">Editar Cliente </label>
+          <input type="text" name="name" placeholder="Nome do cliente"{{user.name}}>
+        </div>
+        <div class="form-control">
+          <label for="student">Aluno</label>
+          <input type="text" name="student" placeholder="Nome do Aluno  "{{user.student}}>
+        </div>
+        <div class="form-control">
+          <label for="conclusion">Data de conclusão</label>
+          <input type="date" name="conclusion" placeholder="Data curso realizado"{{user.conclusion}}>
+        </div>
+        <div class="form-control">
+          <label for="certificate">Número do certificado</label>
+          <input type="text" name="certificate" placeholder="Número do certificado"{{user.certificate}}>
+        </div>
+        <div class="form-control">
+          <label for="course">Tipo do curso</label>
+          <input type="text" name="course" placeholder="Tipo de curso realizado"{{user.course}}>
+        </div>
+        <div class="form-control">
+          <label for="expiration">Data de vencimento</label>
+          <input type="date" name="expiration" placeholder="Data de vencimento"{{user.expiration}}>
+        </div>
+        <div class="form-control">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" placeholder="E-mail"{{user.email}}>
+        </div>
+        <div class="form-control">
+          <label for="fone">Contato</label>
+          <input type="fone" name="fone" placeholder="Telefone para contato"{{user.fone}}>
+        <input type="submit" value="Editar">
+      </form>
+</div>
+</div>

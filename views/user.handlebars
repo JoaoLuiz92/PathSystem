@@ -1,0 +1,28 @@
+<div id="user-page">
+  <div class="container">
+    <h1>{{user.id}}</h1>
+    <p><span class="model">Cliente/Empresa:</span> {{user.name}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Aluno(a):</span> {{user.student}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Data de realização: </span>{{user.conclusion}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Nº do certificado: </span>{{user.certificate}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Tipo de curso: </span>{{user.course}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Validade:</span> {{user.expiration}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">E-mail:</span> {{user.email}}</p>
+    <ul class="separator"></ul>
+    <p><span class="model">Contato:</span> {{user.fone}}</p>
+    <div class="actions">
+      <a class="btn" href="/clients/edit/{{user.id}}">Editar</a>
+      <form action="/clients/remove/{{user.id}}" method="POST">
+        <input class="btn" type="submit" value="Remover">
+        <a href="/clients" class="btn2">Voltar</a>
+
+      </form>
+    </div>
+  </div>
+</div>

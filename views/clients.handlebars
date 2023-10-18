@@ -1,14 +1,14 @@
 <h1>Clientes:</h1>
-<div class="books-container">
-<form href="/searchbook" method="GET">
+<div class="clients-container">
+<form href="/searchuser" method="GET">
   <input type="text" name="" placeholder="Search...">
   <button type="submit">Search</button>
 </form>
-  {{#each books}}
+  {{#each clients}}
     <div>
       <ul class="separator"></ul>
       <span class="identif">{{this.id}}</span> - 
-      <span class="bold"><a  "text-decoration: none;" href="/books/{{this.id}}">{{this.name}}</a>
+      <span class="bold"><a  "text-decoration: none;" href="/clients/{{this.id}}">{{this.name}}</a>
       :  {{this.student}}
       </span>  
     </div>
